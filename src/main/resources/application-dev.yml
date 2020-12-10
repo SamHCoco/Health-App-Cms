@@ -1,2 +1,9 @@
 server:
-  port: 9000
+  port: 8899
+
+keycloak:
+  realm: master
+  auth-server-url: http://localhost:8080/auth/
+  resource: health-app
+  public-client: true
+  ssl-required: external

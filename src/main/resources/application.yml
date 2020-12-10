@@ -1,6 +1,11 @@
 spring:
   application:
     name: healthapp-cms
+  output:
+    ansi:
+      enabled: ALWAYS
   freemarker:
     template-loader-path: classpath:/templates
     suffix: .ftl
+  main:
+    allow-bean-definition-overriding: true
