@@ -6,6 +6,7 @@ import org.keycloak.adapters.springsecurity.KeycloakConfiguration;
 import org.keycloak.adapters.springsecurity.KeycloakSecurityComponents;
 import org.keycloak.adapters.springsecurity.config.KeycloakWebSecurityConfigurerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -50,14 +51,16 @@ public class SecurityConfiguration extends KeycloakWebSecurityConfigurerAdapter 
 
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/register").permitAll()
-                .anyRequest().authenticated()
+                    .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
+                    .permitAll()
+                .anyRequest()
+                    .authenticated()
                 .and()
-                .formLogin()
-                .usernameParameter("username")
-                .passwordParameter("password")
-                .loginPage("/login")
-                .permitAll();
+                  .formLogin()
+                    .usernameParameter("username")
+                    .passwordParameter("password")
+                    .loginPage("/login")
+                    .permitAll();
     }
 
 }
