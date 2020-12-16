@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("home")
-public class HomeController {
+@RequestMapping("product")
+public class ProductController {
 
     @GetMapping
-    public String test(Model model) {
-        return "index";
+    public String getProduct(Model model) {
+        return "product/put";
     }
 
 }
