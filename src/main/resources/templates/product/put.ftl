@@ -29,6 +29,30 @@
             <textarea type="text" name="description" placeholder="Description" rows="4"></textarea>
         </div>
 
+        <div class="field">
+            <div class="two fields">
+
+                <div class="field">
+                    <label>Category</label>
+                    <select class="ui fluid dropdown">
+                        <option value="">Prescription</option>
+                        <option value="AL">Pain</option>
+                        <option value="AK">Eye care</option>
+                        <option value="AK">Allergy & Hay fever</option>
+                        <option value="AL">Cough, Cold & Flu</option>
+                        <option value="AL">Sleep</option>
+                        <option value="AL">Diabetes</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Image URL</label>
+                    <input type="text" name="imageUrl" placeholder="Image URL">
+                </div>
+
+            </div>
+        </div>
+
         <div class="ui button" >Enter</div>
     </form>
 </div>

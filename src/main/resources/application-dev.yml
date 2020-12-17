@@ -7,3 +7,11 @@ keycloak:
   resource: health-app
   public-client: true
   ssl-required: external
+
+
+app:
+  keycloak:
+    username: admin
+    password: admin
+    grant-type: password
+    baseUrl: http://localhost:8080/auth/
