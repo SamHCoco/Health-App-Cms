@@ -14,7 +14,7 @@ public class Product {
     private Long id;
     private String name;
     private Float price;
-    private String manufacturer;
+    private Long manufacturerId;
     private String description;
     private String category;
     private String imageUrl;

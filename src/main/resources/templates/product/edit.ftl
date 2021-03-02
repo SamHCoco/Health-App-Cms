@@ -13,8 +13,8 @@
                 </div>
 
                 <div class="six wide field">
-                    <label>Manufacturer</label>
-                    <input type="text" name="manufacturer" placeholder="Manufacturer">
+                    <label>Manufacturer ID</label>
+                    <input type="text" name="manufacturerId" placeholder="Manufacturer ID">
                 </div>
 
                 <div class="four wide field">
