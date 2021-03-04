@@ -15,3 +15,7 @@ app:
     password: admin
     grant-type: password
     baseUrl: http://localhost:8080/auth/
+    realm: master
+
+zuul:
+  base-url: http://localhost:8763
