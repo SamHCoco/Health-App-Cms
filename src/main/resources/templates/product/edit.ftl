@@ -1,7 +1,7 @@
 <#include "../base/header.ftl">
 
 <div class="ui container" style="max-width: 80%; margin-top: 10px">
-    <form class="ui form">
+    <form class="ui form" method="POST" action="/product">
 
         <h4 class="ui dividing header">Products</h4>
 
@@ -9,24 +9,24 @@
             <div class="three fields">
                 <div class="six wide field">
                     <label>Name</label>
-                    <input type="text" name="name" placeholder="Name">
+                    <input type="text" name="name" placeholder="Name" value="${product.name!''}">
                 </div>
 
                 <div class="six wide field">
                     <label>Manufacturer ID</label>
-                    <input type="text" name="manufacturerId" placeholder="Manufacturer ID">
+                    <input type="text" name="manufacturerId" placeholder="Manufacturer ID" value="${product.manufacturerId!''}">
                 </div>
 
                 <div class="four wide field">
                     <label>Price</label>
-                    <input type="text" name="price" placeholder="Price (£)">
+                    <input type="text" name="price" placeholder="Price (£)" value="${product.price!''}">
                 </div>
             </div>
         </div>
 
         <div class="field">
             <label>Description</label>
-            <textarea type="text" name="description" placeholder="Description" rows="4"></textarea>
+            <textarea type="text" name="description" placeholder="Description" rows="4">${product.description!''}</textarea>
         </div>
 
         <div class="field">
@@ -47,13 +47,13 @@
 
                 <div class="field">
                     <label>Image URL</label>
-                    <input type="text" name="imageUrl" placeholder="Image URL">
+                    <input type="text" name="imageUrl" placeholder="Image URL" value="${product.imageUrl!''}">
                 </div>
 
             </div>
         </div>
 
-        <div class="ui button" >Enter</div>
+        <button class="ui button" type="submit">Enter</button>
     </form>
 </div>
 

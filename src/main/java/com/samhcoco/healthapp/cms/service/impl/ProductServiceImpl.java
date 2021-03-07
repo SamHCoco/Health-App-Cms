@@ -10,6 +10,7 @@ import lombok.val;
 import org.springframework.stereotype.Service;
 
 import static java.lang.String.format;
+import static java.util.Objects.isNull;
 
 @Service
 @RequiredArgsConstructor
@@ -23,7 +24,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getById(Long id) {
-        return null;
+        val url = format("%s/%s/%s/%s", zuul.getBaseUrl(), SERVICE, RESOURCE, id);
+        val response = httpService.get(url, new Product());
+        return response.getBody();
     }
 
     @Override
@@ -35,6 +38,15 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product update(Product product) {
+        return null;
+    }
+
+    @Override
+    public Product createOrUpdate(@NonNull Product product) {
+        val id = product.getId();
+        if (isNull(id)) {
+            return create(product);
+        }
         return null;
     }
 

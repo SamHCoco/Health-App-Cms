@@ -54,13 +54,13 @@ public class SecurityConfiguration extends KeycloakWebSecurityConfigurerAdapter 
                     .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
                     .permitAll()
                 .anyRequest()
-                    .authenticated()
-                .and()
-                  .formLogin()
-                    .usernameParameter("username")
-                    .passwordParameter("password")
-                    .loginPage("/login")
                     .permitAll();
+//                .and()
+//                  .formLogin()
+//                    .usernameParameter("username")
+//                    .passwordParameter("password")
+//                    .loginPage("/login")
+//                    .permitAll();
     }
 
 }
