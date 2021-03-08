@@ -37,8 +37,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product update(Product product) {
-        return null;
+    public Product update(@NonNull Product product) {
+        val url = format("%s/%s/%s", zuul.getBaseUrl(), SERVICE, RESOURCE);
+        val response = httpService.put(url, product);
+        return response.getBody();
     }
 
     @Override
@@ -47,7 +49,7 @@ public class ProductServiceImpl implements ProductService {
         if (isNull(id)) {
             return create(product);
         }
-        return null;
+        return update(product);
     }
 
     @Override

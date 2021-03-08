@@ -1,18 +1,24 @@
 <#include "../base/header.ftl">
 
 <div class="ui container" style="max-width: 80%; margin-top: 10px">
-    <form class="ui form" method="POST" action="/product">
+    <form class="ui form" method="POST" action="/product/create">
 
         <h4 class="ui dividing header">Products</h4>
 
         <div class="field">
-            <div class="three fields">
+            <div class="four fields">
+                <div class="three wide field">
+                    <label>ID</label>
+                    <input type="text" name="id" placeholder="ID" value="${product.id!''}">
+                </div>
+
+
                 <div class="six wide field">
                     <label>Name</label>
                     <input type="text" name="name" placeholder="Name" value="${product.name!''}">
                 </div>
 
-                <div class="six wide field">
+                <div class="three wide field">
                     <label>Manufacturer ID</label>
                     <input type="text" name="manufacturerId" placeholder="Manufacturer ID" value="${product.manufacturerId!''}">
                 </div>

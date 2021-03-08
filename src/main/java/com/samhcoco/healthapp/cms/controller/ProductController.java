@@ -39,7 +39,7 @@ public class ProductController {
         return "product/edit";
     }
 
-    @PostMapping({"{id}", "create"})
+    @PostMapping("create")
     public ModelAndView createOrUpdate(@ModelAttribute Product product, ModelMap model) {
         val result = productService.createOrUpdate(product);
         if (isNull(result)) {
