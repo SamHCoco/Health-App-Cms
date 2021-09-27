@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import static java.lang.String.format;
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
@@ -18,12 +19,14 @@ import static java.util.Objects.nonNull;
 @RequiredArgsConstructor
 public class ProductController {
 
+    private static final String PRODUCT = "product";
+
     private final ProductService productService;
 
     @GetMapping("create")
     public String create(Model model) {
-        if (!model.containsAttribute("product")) {
-            model.addAttribute("product", new Product());
+        if (!model.containsAttribute(PRODUCT)) {
+            model.addAttribute(PRODUCT, new Product());
         }
         return "product/edit";
     }
@@ -32,11 +35,11 @@ public class ProductController {
     public String getProduct(Model model, @PathVariable Long id) {
         val product = productService.getById(id);
         if (nonNull(product)) {
-            model.addAttribute("product", product);
+            model.addAttribute(PRODUCT, product);
         } else {
-            model.addAttribute("product", new Product());
+            model.addAttribute(PRODUCT, new Product());
         }
-        return "product/edit";
+        return format("%s/edit", PRODUCT);
     }
 
     @PostMapping("create")
@@ -45,7 +48,7 @@ public class ProductController {
         if (isNull(result)) {
             return new ModelAndView("redirect:/product/create", model);
         }
-        model.addAttribute("product", result);
+        model.addAttribute(PRODUCT, result);
         return new ModelAndView("redirect:/product/" + result.getId(), model);
     }
 

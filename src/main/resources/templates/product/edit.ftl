@@ -5,6 +5,21 @@
 
         <h4 class="ui dividing header">Products</h4>
 
+        <div class="ui cards">
+
+            <div class="card">
+                <div class="image">
+                    <img src="/static/img/test-jpg.jpg" alt="Not found">
+                </div>
+
+                <div class="content">
+                    <a header="header">Aspirin - Boots</a>
+                    <div class="meta">£5.99</div>
+                </div>
+            </div>
+
+        </div>
+
         <div class="field">
             <div class="four fields">
                 <div class="three wide field">
